@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import Noticia from './noticia';
 
 const ListaNoticias = ({noticias}) => {

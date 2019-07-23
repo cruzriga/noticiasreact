@@ -12,12 +12,13 @@ class App extends Component {
     this.consultarNoticias();
   }
 
-  consultarNoticias = async (categoria = 'general')=>{
+  consultarNoticias = async (categoria = 'general', pais = 'co', buscar= '')=>{
     const ApiKey = "e72093ddcc2c4126905a4ba6750d2ce8";
-    const url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=${ApiKey}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${pais}&category=${categoria}&q=${encodeURI(buscar)}&sortBy=publishedAt&apiKey=${ApiKey}`;
     const respuesta  = await fetch(url);
     const noticias = await respuesta.json();
-    this.setState({noticias: noticias.articles, categoria : categoria})    
+    console.log(url);
+    this.setState({noticias: noticias.articles, data : {url, categoria, pais, buscar}})
   }
 
   render(){
