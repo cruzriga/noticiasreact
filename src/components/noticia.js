@@ -10,7 +10,7 @@ const Noticia = ({noticia}) => {
                         <span className="card-title">{source.name}</span>
                     </div>
                     <div className="card-content">
-                        <h3>{title}</h3>
+                        <h6>{title}</h6>
                         <p>{description}</p>
                     </div>
                     <div className="card-action">
